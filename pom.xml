@@ -4,15 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>com.jq</groupId>
     <artifactId>Boot3</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
     <modules>
         <module>jq_pan</module>
-        <module>jq_pan/common</module>
         <module>jq_jdk17</module>
-        <!--        <module>service</module>-->
+        <module>jq_common</module>
     </modules>
 
     <properties>
