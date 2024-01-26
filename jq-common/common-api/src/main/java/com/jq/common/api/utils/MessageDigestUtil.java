@@ -1,6 +1,6 @@
-package com.jq.common.api;
+package com.jq.common.api.utils;
 
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+import cn.hutool.core.codec.Base64;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 

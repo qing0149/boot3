@@ -11,7 +11,7 @@
     <modules>
         <module>jq_pan</module>
         <module>jq_jdk17</module>
-        <module>jq_common</module>
+        <module>jq-common</module>
     </modules>
 
     <properties>

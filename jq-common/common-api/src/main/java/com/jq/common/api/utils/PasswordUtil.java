@@ -1,4 +1,4 @@
-package com.jq.common.api;
+package com.jq.common.api.utils;
 
 /**
  * 密码工具类

@@ -1,4 +1,4 @@
-package com.jq.common.api;
+package com.jq.common.api.rest;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonIgnore;

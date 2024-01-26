@@ -1,9 +1,11 @@
-package com.jq.common.api;
+package com.jq.common.api.utils;
 
+import cn.hutool.core.codec.Base64;
 import cn.hutool.core.util.ArrayUtil;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+import com.jq.common.api.constant.RPanConstants;
+import com.jq.common.api.exception.RPanBusinessException;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -151,7 +153,7 @@ public class IdUtil {
         // 获取当前时间戳如果小于上次时间戳，则表示时间戳获取出现异常
         if (timestamp < lastTimestamp) {
             System.err.printf("clock is moving backwards.  Rejecting requests until %d.", lastTimestamp);
-            throw new RPanFrameworkException(String.format("Clock moved backwards.  Refusing to generate id for %d milliseconds", lastTimestamp - timestamp));
+            throw new RuntimeException(String.format("Clock moved backwards.  Refusing to generate id for %d milliseconds", lastTimestamp - timestamp));
         }
 
         // 获取当前时间戳如果等于上次时间戳
@@ -233,6 +235,11 @@ public class IdUtil {
         }
         List<Long> result = decryptIdList.stream().map(IdUtil::decrypt).collect(Collectors.toList());
         return result;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(encrypt(1664952265857654784L));
+        System.out.println(encrypt(get()));
     }
 
 }
