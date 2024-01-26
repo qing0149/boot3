@@ -1,27 +1,27 @@
-package com.jq.config;
+package com.jq.cors;
 
-import jakarta.servlet.*;
-import jakarta.servlet.annotation.WebFilter;
-import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletRequest;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.core.annotation.Order;
 
+import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebFilter;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 跨域设置
- * Created by RubinChu on 2021/1/22 下午 4:11
+ * 支持跨域全局过滤器
  */
 @WebFilter(filterName = "corsFilter")
 @Order(1)
 public class CorsFilter implements Filter {
 
     @Override
-    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
-        HttpServletResponse response = (HttpServletResponse) res;
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+        HttpServletResponse response = (HttpServletResponse) servletResponse;
         addCorsResponseHeader(response);
-        chain.doFilter(req, res);
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 
     /**

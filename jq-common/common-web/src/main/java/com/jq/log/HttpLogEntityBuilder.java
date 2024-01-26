@@ -1,19 +1,34 @@
-package com.jq.config;
+package com.jq.log;
+
+import cn.hutool.json.JSONUtil;
+import com.google.common.collect.Maps;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.StopWatch;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.util.ContentCachingRequestWrapper;
+import org.springframework.web.util.ContentCachingResponseWrapper;
+
+import java.util.Enumeration;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * HttpLogEntity构造器
  */
 public class HttpLogEntityBuilder {
 
-  /*  *//**
+    /**
      * 构建HTTP日志对象
      *
      * @param requestWrapper
      * @param responseWrapper
      * @param stopWatch
      * @return
-     *//*
+     */
     public static HttpLogEntity build(ContentCachingRequestWrapper requestWrapper, ContentCachingResponseWrapper responseWrapper, StopWatch stopWatch) {
+        System.out.println("sss");
         HttpLogEntity httpLogEntity = new HttpLogEntity();
         httpLogEntity.setRequestUri(requestWrapper.getRequestURI())
                 .setMethod(requestWrapper.getMethod())
@@ -21,7 +36,10 @@ public class HttpLogEntityBuilder {
                 .setIp(getIpAddress(requestWrapper))
                 .setRequestHeaders(getRequestHeaderMap(requestWrapper));
         if (requestWrapper.getMethod().equals(RequestMethod.GET.name())) {
-            httpLogEntity.setRequestParams(JSON.toJSONString(requestWrapper.getParameterMap()));
+            System.out.println("ssss");
+//            httpLogEntity.setRequestParams(JSON.toJSONString(requestWrapper.getParameterMap()));
+            String string = JSONUtil.parseFromMap(requestWrapper.getParameterMap()).toString();
+            httpLogEntity.setRequestParams(string);
         } else {
             httpLogEntity.setRequestParams(new String(requestWrapper.getContentAsByteArray()));
         }
@@ -31,18 +49,18 @@ public class HttpLogEntityBuilder {
         } else {
             httpLogEntity.setResponseData("Stream Body...");
         }
-        httpLogEntity.setStatus(responseWrapper.getStatusCode())
+        httpLogEntity.setStatus(responseWrapper.getStatus())
                 .setResponseHeaders(getResponseHeaderMap(responseWrapper))
                 .setResolveTime(stopWatch.toString());
         return httpLogEntity;
     }
 
-    *//**
+    /**
      * 获取IP地址
      *
      * @param request
      * @return
-     *//*
+     */
     public static String getIpAddress(HttpServletRequest request) {
         if (request == null) {
             return "unknown";
@@ -68,12 +86,12 @@ public class HttpLogEntityBuilder {
         return "0:0:0:0:0:0:0:1".equals(ip) ? "127.0.0.1" : ip;
     }
 
-    *//**
+    /**
      * 获取请求头MAP
      *
      * @param request
      * @return
-     *//*
+     */
     public static Map<String, String> getRequestHeaderMap(HttpServletRequest request) {
         Map<String, String> result = Maps.newHashMap();
         if (Objects.nonNull(request)) {
@@ -89,12 +107,12 @@ public class HttpLogEntityBuilder {
         return result;
     }
 
-    *//**
+    /**
      * 获取响应头MAP
      *
      * @param response
      * @return
-     *//*
+     */
     public static Map<String, String> getResponseHeaderMap(HttpServletResponse response) {
         Map<String, String> result = Maps.newHashMap();
         if (Objects.nonNull(response)) {
@@ -103,5 +121,5 @@ public class HttpLogEntityBuilder {
         }
         return result;
     }
-*/
+
 }

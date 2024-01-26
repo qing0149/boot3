@@ -18,6 +18,7 @@
         <module>common-cache</module>
         <module>common-lock</module>
         <module>common-orm</module>
+        <module>common-web</module>
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -98,7 +99,7 @@
         <!--hutool-core-->
         <dependency>
             <groupId>cn.hutool</groupId>
-            <artifactId>hutool-core</artifactId>
+            <artifactId>hutool-all</artifactId>
             <version>${hutool.version}</version>
         </dependency>
         <dependency>
