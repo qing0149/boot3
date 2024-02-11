@@ -64,8 +64,8 @@ public class CorsFilter implements Filter {
          */
         CORS_HEADERS("Access-Control-Allow-Headers", "*");
 
-        private String key;
-        private String value;
+        private final String key;
+        private final String value;
 
     }
 

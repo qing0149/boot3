@@ -2,7 +2,6 @@ package com.jq.common.api.rest;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.io.Serializable;
 
@@ -10,7 +9,7 @@ import java.io.Serializable;
  * 公用返回对象
  */
 // 保证json序列化的时候，如果value为null的时候，key也会消失
-@JsonInclude(JsonInclude.Include.NON_NULL)
+//@JsonInclude(JsonInclude.Include.NON_NULL)
 public class R<T> implements Serializable {
 
     /**

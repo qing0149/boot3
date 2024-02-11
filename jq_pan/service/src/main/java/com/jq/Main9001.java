@@ -19,8 +19,4 @@ public class Main9001 {
     public static void main(String[] args) {
         SpringApplication.run(Main9001.class, args);
     }
-    @GetMapping("/aa")
-    public String sss(){
-        return "hahaha";
-    }
 }
