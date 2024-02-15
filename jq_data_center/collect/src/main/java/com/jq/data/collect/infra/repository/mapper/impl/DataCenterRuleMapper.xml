@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jq.data.collect.infra.repository.mapper.DataCenterRuleMapper">
+
+
+    <sql id="Base_Column_List">
+        id,business_id,business_name,
+        en_name,rule_name,rule_type,
+        version,gmt_create,gmt_modified,
+        status
+    </sql>
+</mapper>

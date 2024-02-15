@@ -1,0 +1,20 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: collect
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  profiles:
+    active: dev
+mybatis-plus:
+  mapper-locations: classpath*:com/jq/data/collect/infra/mapper/xml/*.xml
+  global-config:
+    db-config:
+      logic-delete-field: status
+      logic-delete-value: 0 #0标识已经删除
+      logic-not-delete-value: 1 #1标识未删除
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.jq.data.collect.infra.repository.entity

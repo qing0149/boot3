@@ -15,7 +15,9 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 public class JwtSysUser {
+
     private final UserBean user;
+
     @JsonIgnore
     private final List<UserPermission> authorities;
 

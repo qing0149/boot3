@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/jq_common/common_api/pom.xml" />
+        <option value="$PROJECT_DIR$/jq_data_center/pom.xml" />
       </list>
     </option>
   </component>

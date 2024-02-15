@@ -12,6 +12,7 @@
         <module>jq_pan</module>
         <module>jq_jdk17</module>
         <module>jq-common</module>
+<!--        <module>jq_data_center</module>-->
     </modules>
 
     <properties>
