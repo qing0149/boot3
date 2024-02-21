@@ -1,7 +1,7 @@
 package com.jq.common.controller;
 
 import cn.hutool.core.util.StrUtil;
-import com.jq.common.api.exception.ServiceException;
+import com.jq.common.api.exception.model.ServiceException;
 import com.jq.common.api.utils.RequestHolder;
 import com.jq.common.model.JwtSysUser;
 import com.jq.common.model.UserBean;

@@ -1,4 +1,4 @@
-package com.jq.common.api.exception;
+package com.jq.common.api.exception.model;
 
 /**
  * 技术组件层面的异常对象

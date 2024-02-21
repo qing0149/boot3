@@ -5,7 +5,7 @@ import cn.hutool.core.util.ArrayUtil;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
 import com.jq.common.api.constant.RPanConstants;
-import com.jq.common.api.exception.RPanBusinessException;
+import com.jq.common.api.exception.model.RPanBusinessException;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 

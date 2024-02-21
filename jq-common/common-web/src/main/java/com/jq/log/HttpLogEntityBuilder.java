@@ -28,7 +28,6 @@ public class HttpLogEntityBuilder {
      * @return
      */
     public static HttpLogEntity build(ContentCachingRequestWrapper requestWrapper, ContentCachingResponseWrapper responseWrapper, StopWatch stopWatch) {
-        System.out.println("sss");
         HttpLogEntity httpLogEntity = new HttpLogEntity();
         httpLogEntity.setRequestUri(requestWrapper.getRequestURI())
                 .setMethod(requestWrapper.getMethod())
@@ -36,7 +35,6 @@ public class HttpLogEntityBuilder {
                 .setIp(getIpAddress(requestWrapper))
                 .setRequestHeaders(getRequestHeaderMap(requestWrapper));
         if (requestWrapper.getMethod().equals(RequestMethod.GET.name())) {
-            System.out.println("ssss");
 //            httpLogEntity.setRequestParams(JSON.toJSONString(requestWrapper.getParameterMap()));
             String string = JSONUtil.parseFromMap(requestWrapper.getParameterMap()).toString();
             httpLogEntity.setRequestParams(string);

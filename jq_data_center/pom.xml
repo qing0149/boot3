@@ -138,7 +138,7 @@
             <resource>
                 <directory>src/main/java</directory>
                 <includes>
-                    <include>com/imooc/infra/repository/mapper/xml/*.xml</include>
+                    <include>com/jq/data/collect/infra/repository/mapper/impl/*.xml</include>
                 </includes>
                 <filtering>false</filtering>
             </resource>

@@ -1,4 +1,4 @@
-package com.jq.common.api.exception;
+package com.jq.common.api.exception.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

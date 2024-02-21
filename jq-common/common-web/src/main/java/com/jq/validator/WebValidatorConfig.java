@@ -33,7 +33,6 @@ public class WebValidatorConfig {
 
     /**
      * 构造项目的方法参数校验器
-     *
      * @return
      */
     private Validator rPanValidator() {
@@ -42,8 +41,7 @@ public class WebValidatorConfig {
                 .configure()
                 .addProperty(FAIL_FAST_KEY, RPanConstants.TRUE_STR)
                 .buildValidatorFactory();
-        Validator validator = validatorFactory.getValidator();
-        return validator;
+        return validatorFactory.getValidator();
     }
 
 

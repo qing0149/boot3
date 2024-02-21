@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 public enum SourceTypeEnum {
     COLLECT("抽取类型",1),
     CALCULATE("计算类型",2);
-    private static final Map<Integer, SourceTypeEnum> sourceMap = Arrays.asList(values()).stream().collect(Collectors.toMap(SourceTypeEnum::getSourceValue, v->v));
+    private static final Map<Integer, SourceTypeEnum> sourceMap = Arrays.stream(values()).collect(Collectors.toMap(SourceTypeEnum::getSourceValue, v->v));
 
     private final String sourceType;
     private final Integer sourceValue;

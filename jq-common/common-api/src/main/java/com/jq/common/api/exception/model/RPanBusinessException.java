@@ -1,4 +1,4 @@
-package com.jq.common.api.exception;
+package com.jq.common.api.exception.model;
 
 
 import com.jq.common.api.rest.ResponseCode;

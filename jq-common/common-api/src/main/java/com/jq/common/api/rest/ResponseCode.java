@@ -50,11 +50,11 @@ public enum ResponseCode {
     /**
      * 状态码
      */
-    private Integer code;
+    private final Integer code;
 
     /**
      * 状态描述
      */
-    private String desc;
+    private final String desc;
 
 }

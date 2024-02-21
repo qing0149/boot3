@@ -17,7 +17,7 @@ public class R<T> implements Serializable {
      *
      * @see ResponseCode
      */
-    private int code;
+    private final int code;
     private String message;
     private T data;
 
