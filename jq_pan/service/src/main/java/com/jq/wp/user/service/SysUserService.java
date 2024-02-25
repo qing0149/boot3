@@ -2,6 +2,8 @@ package com.jq.wp.user.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.jq.common.api.exception.model.ServiceException;
+import com.jq.wp.user.context.UserRegisterContext;
 import com.jq.wp.user.domain.model.SysUser;
 
 
@@ -12,5 +14,7 @@ import com.jq.wp.user.domain.model.SysUser;
 */
 
 public interface SysUserService extends IService<SysUser> {
+
+    Long register(UserRegisterContext userRegisterContext) throws ServiceException;
 
 }

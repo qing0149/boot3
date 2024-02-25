@@ -3,19 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.jq</groupId>
+        <artifactId>Boot3</artifactId>
+        <version>1.0.0</version>
+    </parent>
 
-    <groupId>com.jq</groupId>
-    <artifactId>Boot3</artifactId>
-    <version>1.0.0</version>
-    <packaging>pom</packaging>
-    <modules>
-        <module>jq_pan</module>
-        <module>jq_jdk17</module>
-        <module>jq-common</module>
-        <module>jq_service_admin</module>
-        <module>jq_gateway</module>
-        <!--        <module>jq_data_center</module>-->
-    </modules>
+    <artifactId>jq_service_admin</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

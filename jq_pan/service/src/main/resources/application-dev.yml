@@ -8,7 +8,7 @@ spring:
   output:
     ansi:
       enabled: always
-  #      表示servlet的加载顺序
+# 表示servlet的加载顺序
   mvc:
     servlet:
       load-on-startup: 1
