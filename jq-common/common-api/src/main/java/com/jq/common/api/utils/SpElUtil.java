@@ -2,6 +2,7 @@ package com.jq.common.api.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.context.expression.AnnotatedElementKey;
@@ -160,6 +161,7 @@ public class SpElUtil {
     /**
      * 表达式执行器对象
      */
+    @EqualsAndHashCode(callSuper = true)
     @Data
     private static class RPanExpressionEvaluator extends CachedExpressionEvaluator {
         private final ParameterNameDiscoverer paramNameDiscoverer = new DefaultParameterNameDiscoverer();

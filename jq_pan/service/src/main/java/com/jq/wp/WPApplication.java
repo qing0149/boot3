@@ -1,10 +1,10 @@
-package com.jq;
+package com.jq.wp;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @program: Boot3
@@ -14,9 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @SpringBootApplication(scanBasePackages = "com.jq")
 @ServletComponentScan(basePackages = "com.jq")
-@RestController
-public class Main9001 {
+@MapperScan("com.jq.wp.*.mapper")
+@EnableTransactionManagement
+public class WPApplication {
     public static void main(String[] args) {
-        SpringApplication.run(Main9001.class, args);
+        SpringApplication.run(WPApplication.class, args);
     }
 }

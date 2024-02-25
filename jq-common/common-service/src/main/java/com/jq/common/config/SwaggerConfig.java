@@ -13,6 +13,7 @@ import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
 import org.springdoc.core.customizers.GlobalOpenApiCustomizer;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -26,19 +27,19 @@ import java.util.Optional;
 @Configuration
 public class SwaggerConfig {
 
-    @Value("${swagger.title}")
+    @Value("${swagger.title:default Title}")
     private String title;
 
-    @Value("${swagger.version}")
+    @Value("${swagger.version:default version}")
     private String version;
 
-    @Value("${swagger.description}")
+    @Value("${swagger.description:default description}")
     private String description;
 
-    @Value("${swagger.termsOfService}")
+    @Value("${swagger.termsOfService:default termsOfService}")
     private String termsOfService;
 
-    @Value("${swagger.url}")
+    @Value("${swagger.url:default url}")
     private String url;
 
 

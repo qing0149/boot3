@@ -3,10 +3,12 @@ package com.jq.common.api.exception.model;
 
 import com.jq.common.api.rest.ResponseCode;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * 自定义全局业务异常类
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class RPanBusinessException extends RuntimeException {
 

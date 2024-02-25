@@ -6,8 +6,10 @@
     <file url="file://$PROJECT_DIR$/jq-common/common-file/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jq-common/common-lock/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jq-common/common-orm/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jq-common/common-schedule/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jq-common/common-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jq-common/common-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jq-common/schedule/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jq-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jq-common/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jq_data_center/collect/src/main/java" charset="UTF-8" />

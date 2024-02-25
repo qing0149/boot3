@@ -9,7 +9,8 @@
         <version>0.0.1</version>
     </parent>
 
-    <artifactId>common-orm</artifactId>
+    <groupId>com.jq.file</groupId>
+    <artifactId>common-schedule</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -18,19 +19,16 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.23</version>
+            <groupId>com.jq.common</groupId>
+            <artifactId>common-api</artifactId>
+            <version>0.0.1</version>
         </dependency>
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.5.3</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-        </dependency>
+
     </dependencies>
 
 </project>

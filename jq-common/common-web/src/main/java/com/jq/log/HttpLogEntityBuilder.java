@@ -1,6 +1,7 @@
 package com.jq.log;
 
 import cn.hutool.json.JSONUtil;
+import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Maps;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -35,9 +36,10 @@ public class HttpLogEntityBuilder {
                 .setIp(getIpAddress(requestWrapper))
                 .setRequestHeaders(getRequestHeaderMap(requestWrapper));
         if (requestWrapper.getMethod().equals(RequestMethod.GET.name())) {
-//            httpLogEntity.setRequestParams(JSON.toJSONString(requestWrapper.getParameterMap()));
-            String string = JSONUtil.parseFromMap(requestWrapper.getParameterMap()).toString();
-            httpLogEntity.setRequestParams(string);
+            httpLogEntity.setRequestParams(JSON.toJSONString(requestWrapper.getParameterMap()));
+/*            String string = JSONUtil.parseFromMap(requestWrapper.getParameterMap()).toString();
+            JSONUtil.toJsonStr();*/
+//            httpLogEntity.setRequestParams(string);
         } else {
             httpLogEntity.setRequestParams(new String(requestWrapper.getContentAsByteArray()));
         }

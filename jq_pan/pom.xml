@@ -6,8 +6,8 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.2</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>3.0.5</version>
+        <relativePath/>
     </parent>
     <groupId>com.jq</groupId>
     <artifactId>jq_pan</artifactId>
@@ -23,9 +23,8 @@
         <maven.compiler.compilerVersion>17</maven.compiler.compilerVersion>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <druid.version>1.1.10</druid.version>
-        <mysql-connector.version>8.0.11</mysql-connector.version>
-        <mybatis-plus.version>3.3.2</mybatis-plus.version>
+        <mysql-connector.version>8.0.23</mysql-connector.version>
+        <mybatis-plus.version>3.4.0</mybatis-plus.version>
         <velocity.version>2.3</velocity.version>
         <jackson.version>2.9.8</jackson.version>
         <guava.version>20.0</guava.version>
@@ -44,10 +43,16 @@
         <org.mapstruct.version>1.5.2.Final</org.mapstruct.version>
         <projectlombok.version>1.18.20</projectlombok.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
+        <druid.version>1.2.16</druid.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
             <!--reflections-->
             <dependency>
                 <groupId>org.reflections</groupId>
@@ -208,5 +213,25 @@
                 <version>3.1.2</version>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.yml</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.yml</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
     </build>
 </project>
