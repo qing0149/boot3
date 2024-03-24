@@ -1,0 +1,23 @@
+{
+  "properties": [
+    {
+      "name": "com.jq.pan.cache.caffeine.init-cache-capacity",
+      "type": "java.lang.Integer",
+      "description": "Caffein缓存的初始容量",
+      "defaultValue": 256
+    },
+      {
+          "name": "com.jq.pan.cache.caffeine.max-cache-capacity",
+          "type": "java.lang.Long",
+          "description": "Caffein缓存的最大容量",
+          "defaultValue": 10000
+      }
+  ,
+      {
+          "name": "com.jq.pan.cache.caffeine.allow-null-value",
+          "type": "java.lang.Boolean",
+          "description": "Caffein缓存是否null作为value的属性",
+          "defaultValue": "true"
+      }
+  ]
+}

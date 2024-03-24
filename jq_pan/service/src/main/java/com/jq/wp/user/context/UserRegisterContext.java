@@ -23,7 +23,7 @@ public class UserRegisterContext implements Serializable {
 
     @Schema(description = "用户姓名")
     @NotBlank
-    private String userName;
+    private String username;
 
     @Schema(description = "账号")
     @NotBlank
@@ -41,4 +41,5 @@ public class UserRegisterContext implements Serializable {
      * 用户实体对象
      */
     private SysUser sysUser;
+
 }

@@ -22,6 +22,9 @@
         <module>common-service</module>
         <module>common-file</module>
         <module>common-schedule</module>
+        <module>common-cache/common-caffeine</module>
+        <module>common-cache/common-redis</module>
+        <module>common-cache/common-core</module>
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

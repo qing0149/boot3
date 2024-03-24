@@ -3,12 +3,17 @@ package test17;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.date.Week;
+import cn.hutool.core.lang.Assert;
+import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.logging.SimpleFormatter;
 import java.util.stream.Stream;
 
 /**
@@ -81,6 +86,7 @@ public class test {
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
         System.out.println("Sum of currentDeptPoints: " + sum);
     }
+
     @Test
     public void test4() {
         HashMap<String, List<String>> map = new HashMap<>();
@@ -91,5 +97,48 @@ public class test {
         List<String> orDefault1 = map.getOrDefault("124", list);
         System.out.println(orDefault1);
 
+    }
+
+    @Test
+    public void test5() {
+        String fileName = "新建 文本文档 (2).txt";
+        int newFileNamePointPosition = fileName.lastIndexOf(".");
+        System.out.println(newFileNamePointPosition);
+    }
+
+    @Test
+    public void test6() {
+        List<Integer> list = Arrays.asList(null, null, 2);
+//        boolean allEmpty = ObjectUtil.isNotEmpty(list.get(0), list.get(1));
+ /*       ObjectUtil.
+        System.out.println(allEmpty)*/
+        ;
+
+    }
+
+    @Test
+    public void test7() throws ParseException {
+        String date1 = "2023-09-01 12:01:03";
+        Date date2024 = new Date();
+        System.out.println("------" + date2024);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date2023 = format.parse(date1);
+        boolean before = date2023.before(date2024);
+        System.out.println("------" + before);
+
+    }
+
+    @Test
+    public void test8() throws ParseException, InterruptedException {
+        Date date1 = new Date();
+        Date clone = (Date) date1.clone();
+        System.out.println(date1);
+        Thread.sleep(500);
+        Date date2 = new Date();
+        System.out.println(date2);
+        int i = date1.compareTo(date2);
+        System.out.println(i);
+        int i1 = date1.compareTo(clone);
+        System.out.println(i1);
     }
 }

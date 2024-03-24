@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/jq-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jq-admin/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jq-common/common-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jq-common/common-cache/common-caffeine/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jq-common/common-cache/common-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jq-common/common-cache/common-redis/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jq-common/common-cache/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jq-common/common-cache/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jq-common/common-file/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jq-common/common-lock/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jq-common/common-orm/src/main/java" charset="UTF-8" />
@@ -12,6 +18,8 @@
     <file url="file://$PROJECT_DIR$/jq-common/schedule/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jq-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jq-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jq-team/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jq-team/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jq_data_center/collect/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jq_data_center/example/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jq_data_center/model/src/main/java" charset="UTF-8" />

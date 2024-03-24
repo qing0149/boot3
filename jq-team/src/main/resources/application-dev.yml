@@ -1,0 +1,65 @@
+server:
+  port: 9092
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: team
+  output:
+    ansi:
+      enabled: always
+# 表示servlet的加载顺序
+  mvc:
+    servlet:
+      load-on-startup: 1
+  servlet:
+    multipart:
+      max-file-size: 3072MB
+      max-request-size: 3072MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/jq_dev
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+
+springdoc:
+  swagger-ui:
+    path: /swagger
+    tags-sorter: alpha
+    operations-sorter: order
+  api-docs:
+    path: /v3/api-docs
+  default-flat-param-object: true
+  packages-to-scan: com.jq.wp
+
+swagger:
+  title: "网盘接口"
+  version: 2
+#  description: "接口描述"
+  termsOfService: 4
+  url: 5
+
+#mybatis-plus:
+#  # 指定sql映射文件位置
+#  mapper-locations:
+##    - classpath*:com/jq/user/mapper/*.xml # 扫描子模块下的 mapper.xml文件
+##    - classpath:mybatis/mapper/*.xml # 扫描当前模块下的 mapper.xml 文件
+#  # 实体对象的扫描包
+#  type-aliases-package: com.jq.user.domain.model
+#  global-config:
+#    db-config:
+#      # id 生成策略全局配置, 雪花算法
+#      id-type: auto
+#    # 不显示 banner
+#    banner: false
+#  # 开启驼峰命名
+#  configuration:
+#    map-underscore-to-camel-case: true
+#mybatis-plus:
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.jq.user.domain.model
+#  configuration:
+#    map-underscore-to-camel-case: true
+mybatis-plus:
+  mapper-locations: classpath*:com/jq/**/*.xml

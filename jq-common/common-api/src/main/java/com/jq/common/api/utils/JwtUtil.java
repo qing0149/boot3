@@ -1,16 +1,25 @@
 package com.jq.common.api.utils;
 
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.StrUtil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Jwt工具类
  * Created by RubinChu on 2021/1/22 下午 4:11
  */
+@Slf4j
+@Component
 public class JwtUtil {
 
     public static final Long TWO_LONG = 2L;
@@ -65,5 +74,6 @@ public class JwtUtil {
             return null;
         }
     }
+
 
 }

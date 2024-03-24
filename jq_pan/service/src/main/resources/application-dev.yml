@@ -22,6 +22,11 @@ spring:
     username: root
     password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
+  data:
+    redis:
+      database: 0
+      host: 127.0.0.1
+      port: 6379
 
 springdoc:
   swagger-ui:
@@ -63,3 +68,7 @@ swagger:
 #    map-underscore-to-camel-case: true
 mybatis-plus:
   mapper-locations: classpath*:com/jq/**/*.xml
+  global-config:
+    db-config:
+      # id 生成策略全局配置, 雪花算法
+      id-type: auto

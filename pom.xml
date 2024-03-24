@@ -12,9 +12,9 @@
         <module>jq_pan</module>
         <module>jq_jdk17</module>
         <module>jq-common</module>
-        <module>jq_service_admin</module>
         <module>jq_gateway</module>
-        <!--        <module>jq_data_center</module>-->
+        <module>jq-admin</module>
+        <module>jq-team</module>
     </modules>
 
     <properties>
