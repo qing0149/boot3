@@ -1,10 +1,13 @@
 package test17;
 
+import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.date.DateTime;
+import cn.hutool.core.date.DateUnit;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.date.Week;
 import cn.hutool.core.lang.Assert;
 import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.core.util.StrUtil;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.junit.Test;
@@ -12,8 +15,13 @@ import org.junit.Test;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.logging.SimpleFormatter;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -140,5 +148,106 @@ public class test {
         System.out.println(i);
         int i1 = date1.compareTo(clone);
         System.out.println(i1);
+    }
+
+    @Test
+    public void test9() throws InterruptedException {
+        ArrayList<Integer> ids = new ArrayList<>();
+        ids.add(0);
+        ids.add(0);
+        ids.add(0);
+        ids.add(0);
+        ids.add(0);
+        System.out.println(ids);
+//        Integer remove = ids.stream().reduce()
+//        System.out.println(remove);
+        System.out.println(ids);
+
+    }
+
+    @Test
+    public void test10() throws InterruptedException {
+        HashSet<Integer> ids = new HashSet<>();
+        ids.add(0);
+        ids.add(0);
+        ids.add(0);
+        ids.add(0);
+        ids.add(0);
+        System.out.println(ids);
+        boolean remove = ids.remove(0);
+//        System.out.println(remove);
+        System.out.println(ids);
+        if (CollUtil.isEmpty(ids)) {
+            System.out.println("sss");
+        }
+
+    }
+
+    @Test
+    public void test11() throws InterruptedException {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        List<Integer> integers = list.subList(0, 1);
+        System.out.println(integers);
+
+    }
+
+    @Test
+    public void test12() throws InterruptedException {
+//        String day1 = "2024-04-13 10:35:24";
+//        String day2 = "2024-04-15 10:35:24";
+        String day1 = "2024-04-13 10:35:24";
+        String day2 = "2024-04-15 10:35:24";
+/*        LocalDateTime startDate = LocalDateTime.parse(day1);
+        LocalDateTime endDate = LocalDateTime.parse(day2);*/
+        LocalDateTime startDate = LocalDateTime.parse(day1);
+        LocalDateTime endDate = LocalDateTime.parse(day2);
+        LocalDateTime currentDate = LocalDateTime.now(); // 获取当前日期
+        boolean isBetween = !currentDate.isBefore(startDate) && !currentDate.isAfter(endDate);
+        System.out.println("当前日期是否在指定日期区间内：" + isBetween);
+
+    }
+
+    @Test
+    public void ttt() {
+        String day1 = "2024-04-13 10:35:24";
+        String day2 = "2024-04-16 10:35:24";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime startDate = LocalDateTime.parse(day1, formatter);
+        LocalDateTime endDate = LocalDateTime.parse(day2, formatter);
+        LocalDateTime currentDate = LocalDateTime.now(); // 获取当前日期时间
+        boolean isBetween = !currentDate.isBefore(startDate) && !currentDate.isAfter(endDate);
+        System.out.println("当前日期时间是否在指定日期时间区间内：" + isBetween);
+    }
+
+    @Test
+    public void test14() {
+//        String day1 = null;
+        String day1 = "2024-04-13 10:35:24";
+        String day2 = "2024-04-16 10:35:24";
+        boolean allBlank = StrUtil.isAllNotBlank(day1, day2);
+        System.out.println(allBlank);
+    }
+
+    @Test
+    public void test15() {
+        String day1 = "2024-04-13 10:35:24";
+        String day2 = "2024-04-12 10:35:24";
+        String day3 = "2024-04-14 10:35:24";
+        String day4 = "2024-04-15 10:35:24";
+        String day5 = "2024-04-16 10:35:24";
+        ArrayList<String> list = new ArrayList<>();
+        list.add(day1);
+        list.add(day2);
+        list.add(day3);
+        list.add(day4);
+        list.add(day5);
+        List<String> collect = list.stream().filter(l -> {
+            DateTime parse = DateUtil.parse(l);
+            return DateUtil.isSameDay(parse, new Date());
+        }).collect(Collectors.toList());
+        System.out.println(collect);
     }
 }

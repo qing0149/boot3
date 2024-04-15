@@ -125,15 +125,46 @@ public class Test {
     }
 
     public static void main(String[] args) {
-//        int[] nums = {100, 4, 200, 1, 3, 2};
+/*//        int[] nums = {100, 4, 200, 1, 3, 2};
         int[][] array = {{1, 2, 3}, {4, 5, 6}};
 //        moveZeroes(nums);
 //        for (int num : nums) {
 //            System.out.println(num);
 //        }
 //        int[][] matrix={}
-        setZeroes(array);
+        setZeroes(array);*/
+        int[] nums = {0,0,1,2,1,0,1,3,2,1,2,1};
+        int trap = trap(nums);
+        System.out.println(trap);
 
+    }
+
+    public static int trap(int[] height) {
+        List<Integer> realHeight = new ArrayList<>();
+        Integer j=0;
+        if (0==height[0]){
+            for (int i = 0; i < height.length; i++) {
+                int value = height[i];
+                if (0 == value) {
+                    if ((i+1)<height.length-1){
+                        if (0!=height[i+1]){
+                            j=i+1;
+                            break;
+                        }
+                    }
+                }else {
+                    j=null;
+                }
+            }
+        }
+        if (null==j){
+            return 0;
+        }
+        if (j>=height.length){
+            return 0;
+        }
+
+        return j;
     }
 
 }

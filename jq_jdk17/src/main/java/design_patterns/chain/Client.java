@@ -16,9 +16,11 @@ public class Client {
         CacheHandler cacheHandler = new CacheHandler();
         MetricsHandler metricsHandler = new MetricsHandler();
         ProceedHandler proceedHandler = new ProceedHandler();
+
         authHandler.setNext(metricsHandler);
         metricsHandler.setNext(cacheHandler);
         cacheHandler.setNext(proceedHandler);
+
         Map request = new HashMap<>();
         request.put("username", "admin");
         request.put("password", "123456");
