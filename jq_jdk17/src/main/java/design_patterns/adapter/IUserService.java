@@ -7,7 +7,7 @@ import java.util.List;
  * @Date 2024/4/15 19:21
  */
 public interface IUserService {
-    public List<String> teacherList();
+    public abstract List<String> teacherList();
 
     public List<String> studentList();
 }
