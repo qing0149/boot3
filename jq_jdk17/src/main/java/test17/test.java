@@ -250,4 +250,22 @@ public class test {
         }).collect(Collectors.toList());
         System.out.println(collect);
     }
+    @Test
+    public void tst16(){
+        Integer a=3;
+        if (ObjectUtil.isNull(a)
+                || (!ObjectUtil.equals(a, 0)
+                || (!ObjectUtil.equals(a, 1)))) {
+            System.out.println("sssss");
+        }else {
+            System.out.println("bbbbbbbbbbbb");
+        }
+    }
+    @Test
+    public void tst17(){
+//        Student student = new Student();
+//        Long id = student.getId();
+//        System.out.println(id);
+
+    }
 }
